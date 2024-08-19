@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import '../css/employeesForm.css';
 import { addEmployee } from '../redux/reducers/employeesReducer';
 import states from '../data/states';
+import { Link } from 'react-router-dom';
 
 const EmployeeForm = () => {
     const [firstName, setFirstName] = useState('');
@@ -14,6 +15,8 @@ const EmployeeForm = () => {
     const [state, setState] = useState('');
     const [zipCode, setZipCode] = useState('');
     const [department, setDepartment] = useState('');
+
+    const [showConfirmation, setShowConfirmation] = useState(false); // État pour contrôler l'affichage du message
 
     const dispatch = useDispatch();
 
@@ -30,20 +33,34 @@ const EmployeeForm = () => {
             department,
         };
         dispatch(addEmployee(newEmployee));
+        setShowConfirmation(true); // Affiche le message de confirmation
+    };
+
+    const handleCloseConfirmation = () => {
+        setShowConfirmation(false); // Masque le message de confirmation
     };
 
     return (
         <>
             <header className="header">
                 <div>
-                <img src="/hrnet-logo.png" alt="HRnet Logo" className="logo" />
-                    <h1>HRnet</h1>
-                    <a href="employee-list" className='margin'>View Current Employees</a>
+                    <div className="flex-header">
+                        <img src="/hrnet-logo.png" alt="HRnet Logo" className="logo" />
+                        <h1>HRnet</h1>
+                        <Link to="/EmployeeList" className="margin">View Current Employees</Link>
                     </div>
+                </div>
             </header>
 
             <main className="form-container">
-                 <h2 className="form-title">Create Employee</h2>
+                <h2 className="form-title">Create Employee</h2>
+                {showConfirmation && ( 
+                    // Affiche le message de confirmation si showConfirmation est true
+                    <div className="confirmation-message">
+                        Employee Created!
+                        <button className="close-button" onClick={handleCloseConfirmation}>×</button>
+                    </div>
+                )}
                 <form>
                     <div className="form-group">
                         <label htmlFor="first-name">First Name</label>
@@ -122,7 +139,6 @@ const EmployeeForm = () => {
                                     </option>
                                 ))}
                             </select>
-
                         </div>
 
                         <div className="form-group">

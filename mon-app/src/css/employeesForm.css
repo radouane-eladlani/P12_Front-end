@@ -10,10 +10,11 @@
   align-items: center;
 }
 .margin {
-  margin-right:50px;
-  margin-top: 90px;
-  color: black;
+  margin-right: 50px;
+  color: rgb(43, 50, 97);
   text-decoration: none;
+  margin-top: 70px;
+
 }
 .form-title {
   display: flex;

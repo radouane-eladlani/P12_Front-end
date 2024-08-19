@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client'; 
 import './css/index.css'; 
 import reportWebVitals from './reportWebVitals';
-import EmployeesForm from './components/employeesForm'; 
+import EmployeesForm from './components/EmployeesForm'; 
+import EmployeeList from './components/EmployeeList';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'; 
 import store from './redux/store'; 
 import { Provider } from 'react-redux';
@@ -10,6 +11,7 @@ import { Provider } from 'react-redux';
 // Création du routeur avec les différentes routes
 const router = createBrowserRouter([
     { path: "/", element: <EmployeesForm /> },
+    { path: "/EmployeeList", element: <EmployeeList/> }
 ]);
 
 function renderApp() {
