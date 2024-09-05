@@ -1,5 +1,5 @@
 .employee-list-container {
-    width: 80%;
+    width: 60%;
     margin: auto;
 }
 
@@ -12,47 +12,16 @@ h1 {
     display: block;
     text-align: center;
     margin-top: 20px;
-    color: blue;
-    text-decoration: none;
+    color: rgb(43, 50, 97);
 }
 .home-link-container{
     display: flex;
     justify-content: center;
 }
 
-input[type="text"] {
+.search-input {
     padding: 8px;
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 20px;
 }
-.confirmation-message {
-    background-color: #4CAF50; 
-    color: white;
-    padding: 50px;
-    margin: 0 auto; 
-    text-align: center;
-    border-radius: 8px; 
-    position: fixed; 
-    top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    z-index: 1000; 
-    font-size: 18px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    max-width: 500px;
-}
-
-.close-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    position: absolute;
-    right: 10px;
-    top: 5px;
-    cursor: pointer;
-    line-height: 1;
-}
-

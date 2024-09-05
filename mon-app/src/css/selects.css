@@ -1,0 +1,28 @@
+
+  
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .custom-select {
+    padding: 8px;
+    font-size: 16px;
+    border: 0.5px solid black;
+    border-radius: 2px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
+    color: black;
+    width: 100%;
+  }
+  
+  .custom-select:hover { 
+    border-color: none; 
+    box-shadow: none;
+  }
+  
+  .custom-select:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
