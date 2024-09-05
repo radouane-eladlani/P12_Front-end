@@ -16,9 +16,9 @@ const EmployeeForm = () => {
     const [startDate, setStartDate] = useState(null);
     const [street, setStreet] = useState('');
     const [city, setCity] = useState('');
-    const [state, setState] = useState('');
+    const [state, setState] = useState(states[0].name);
     const [zipCode, setZipCode] = useState('');
-    const [department, setDepartment] = useState('');
+    const [department, setDepartment] = useState('Sales');
 
     const [errors, setErrors] = useState({});
     const [showConfirmation, setShowConfirmation] = useState(false);
@@ -180,7 +180,7 @@ const EmployeeForm = () => {
                 options={stateOptions}
                 id="State"
                 value={state}
-                onChange={(e) => setState(e.target.value)}
+                changeValue={(newValue) => setState(newValue)}
                 required
             />
             {errors.state && <p className="error-message">{errors.state}</p>}
@@ -205,7 +205,7 @@ const EmployeeForm = () => {
             options={departmentOptions}
             id="Department"
             value={department}
-            onChange={(e) => setDepartment(e.target.value)}
+            changeValue={(newValue) => setDepartment(newValue)}
             required
         />
         {errors.department && <p className="error-message">{errors.department}</p>}
@@ -213,7 +213,7 @@ const EmployeeForm = () => {
 
     <button type="submit" onClick={handleSave}>Save</button>
     <Modal isOpen={showConfirmation} onClose={handleCloseConfirmation} title="Employee Created">
-        <button onClick={handleCloseConfirmation} className="modal-close">x</button>
+        <button onClick={handleCloseConfirmation} className="modal-close"></button>
     </Modal>
 </form>
 

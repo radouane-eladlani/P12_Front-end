@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import '../css/selects.css'; 
 
-const ReusableSelect = ({ options, label }) => {
+const ReusableSelect = ({ options, label, changeValue }) => {
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
+
+    changeValue(event.target.value);
   };
 
   return (

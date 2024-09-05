@@ -8,7 +8,6 @@ import '../css/employeeList.css';
 const EmployeeList = () => {
     const employees = useSelector((state) => state.employees);
     const  [search, setSearch] = useState('');
-
     const filteredEmployees = employees.filter((employee) => {
         return employee.firstName.toLowerCase().includes(search.toLowerCase()) ||
             employee.lastName.toLowerCase().includes(search.toLowerCase()) ||
@@ -20,7 +19,6 @@ const EmployeeList = () => {
             employee.state.toLowerCase().includes(search.toLowerCase()) ||
             employee.zipCode.toLowerCase().includes(search.toLowerCase());
     });
-    
     const columns = [
         {
             name: 'First Name',
@@ -80,7 +78,8 @@ const EmployeeList = () => {
                 highlightOnHover
                 defaultSortField="First Name"
                 pagination
-            />
+                
+    />
             <div className="home-link-container">
                 <Link to="/" className="home-link">Home</Link>
             </div>
